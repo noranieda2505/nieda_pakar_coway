@@ -1,349 +1,729 @@
 <!DOCTYPE html>
-
 <html lang="ms">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Coway by Nieda | Pilih Coway Yang Sesuai</title>
 
+<meta name="description" content="Coway by Nieda. Dapatkan info produk, promosi dan pilihan Coway mengikut keperluan rumah dan bajet. Terus WhatsApp Nieda.">
+
 <style>
-
-*{
-
-  box-sizing:border-box;
-
+* {
+  box-sizing: border-box;
 }
 
-body{
-
-  margin:0;
-
-  font-family:Arial,Helvetica,sans-serif;
-
-  background:#f5f9fc;
-
-  color:#18324a;
-
+html {
+  scroll-behavior: smooth;
 }
 
-.container{
-
-  max-width:1000px;
-
-  margin:auto;
-
-  padding:20px;
-
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f7f6;
+  color: #173b35;
 }
 
-header{
-
-  background:white;
-
-  padding:18px 20px;
-
-  position:sticky;
-
-  top:0;
-
-  z-index:10;
-
-  box-shadow:0 2px 10px #00000012;
-
+.container {
+  width: min(1100px, 92%);
+  margin: auto;
 }
 
-nav{
-
-  display:flex;
-
-  align-items:center;
-
-  justify-content:space-between;
-
-  gap:15px;
-
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid #e5ebe8;
+  backdrop-filter: blur(10px);
 }
 
-.logo{
-
-  font-size:26px;
-
-  font-weight:800;
-
-  color:#0876c9;
-
+.header-inner {
+  min-height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
 }
 
-.navbtn{
-
-  background:#16a85b;
-
-  color:white;
-
-  padding:12px 18px;
-
-  border-radius:25px;
-
-  text-decoration:none;
-
-  font-weight:bold;
-
+.logo {
+  font-weight: 800;
+  font-size: 20px;
+  color: #173b35;
 }
 
-.hero{
-
-  background:linear-gradient(135deg,#e9f7ff,#ffffff);
-
-  padding:35px 20px;
-
-  text-align:center;
-
+.logo span {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  color: #71817c;
+  margin-top: 3px;
 }
 
-.hero h1{
-
-  font-size:42px;
-
-  margin:10px 0;
-
-  color:#123b68;
-
+.whatsapp-btn {
+  display: inline-block;
+  background: #18a96b;
+  color: white;
+  text-decoration: none;
+  padding: 13px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  box-shadow: 0 7px 18px rgba(24,169,107,0.22);
 }
 
-.hero p{
-
-  font-size:18px;
-
-  color:#526a7d;
-
+.whatsapp-btn:hover {
+  transform: translateY(-1px);
 }
 
-.whatsapp{
-
-  display:inline-block;
-
-  margin-top:15px;
-
-  background:#16a85b;
-
-  color:white;
-
-  padding:15px 25px;
-
-  border-radius:30px;
-
-  text-decoration:none;
-
-  font-weight:bold;
-
-  font-size:17px;
-
+/* HERO */
+.hero {
+  padding: 55px 0 35px;
+  background: linear-gradient(135deg, #eef8f3, #ffffff);
 }
 
-.sale{
-
-  background:white;
-
-  padding:25px 15px;
-
-  text-align:center;
-
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 40px;
+  align-items: center;
 }
 
-.sale img{
-
-  width:100%;
-
-  max-width:850px;
-
-  height:auto;
-
-  display:block;
-
-  margin:auto;
-
-  border-radius:12px;
-
-  box-shadow:0 5px 20px #00000018;
-
+.badge {
+  display: inline-block;
+  background: #dff4e9;
+  color: #168057;
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 15px;
 }
 
-.cta{
-
-  background:#0876c9;
-
-  color:white;
-
-  text-align:center;
-
-  padding:35px 20px;
-
+.hero h1 {
+  font-size: clamp(34px, 5vw, 58px);
+  line-height: 1.05;
+  margin: 0 0 18px;
+  color: #123c34;
 }
 
-.cta h2{
-
-  font-size:30px;
-
-  margin:0 0 10px;
-
+.hero p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: #5d706a;
+  margin-bottom: 25px;
 }
 
-.cta p{
-
-  font-size:17px;
-
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
-footer{
-
-  background:#123b68;
-
-  color:white;
-
-  text-align:center;
-
-  padding:25px 15px;
-
-  font-size:14px;
-
+.primary-btn {
+  background: #18a96b;
+  color: white;
+  padding: 16px 25px;
+  border-radius: 35px;
+  text-decoration: none;
+  font-weight: 800;
 }
 
-@media(max-width:600px){
+.secondary-btn {
+  background: white;
+  color: #173b35;
+  padding: 16px 25px;
+  border-radius: 35px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid #dbe5e0;
+}
 
-  .hero h1{
+/* POSTER */
+.poster-section {
+  padding: 35px 0 60px;
+}
 
-    font-size:30px;
+.poster {
+  display: block;
+  width: 100%;
+  max-width: 850px;
+  margin: auto;
+  border-radius: 22px;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.12);
+}
 
+/* SECTION */
+section {
+  padding: 65px 0;
+}
+
+.section-title {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+
+.section-title h2 {
+  font-size: 34px;
+  margin: 0 0 12px;
+  color: #173b35;
+}
+
+.section-title p {
+  color: #687a74;
+  line-height: 1.6;
+}
+
+/* PRODUCTS */
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  border: 1px solid #e5ebe8;
+  box-shadow: 0 8px 25px rgba(23,59,53,0.06);
+}
+
+.card-icon {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+}
+
+.card p {
+  color: #687a74;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.card a {
+  color: #168057;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* PROMO */
+.promo {
+  background: #173b35;
+  color: white;
+  border-radius: 28px;
+  padding: 45px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 25px;
+  align-items: center;
+}
+
+.promo h2 {
+  margin: 0 0 10px;
+  font-size: 32px;
+}
+
+.promo p {
+  margin: 0;
+  color: #dceae5;
+  line-height: 1.6;
+}
+
+.promo strong {
+  color: white;
+}
+
+/* WHY */
+.why {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.why-item {
+  text-align: center;
+  background: white;
+  padding: 28px 20px;
+  border-radius: 20px;
+  border: 1px solid #e5ebe8;
+}
+
+.why-item .number {
+  font-size: 30px;
+  font-weight: 800;
+  color: #18a96b;
+  margin-bottom: 10px;
+}
+
+.why-item h3 {
+  margin: 0 0 8px;
+}
+
+.why-item p {
+  margin: 0;
+  color: #687a74;
+  line-height: 1.5;
+}
+
+/* FAQ */
+.faq {
+  max-width: 800px;
+  margin: auto;
+}
+
+details {
+  background: white;
+  margin-bottom: 12px;
+  padding: 20px 22px;
+  border-radius: 15px;
+  border: 1px solid #e5ebe8;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+details p {
+  color: #687a74;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* CTA */
+.final-cta {
+  text-align: center;
+  background: linear-gradient(135deg, #e7f7ef, #ffffff);
+  border-radius: 30px;
+  padding: 55px 25px;
+}
+
+.final-cta h2 {
+  font-size: 35px;
+  margin: 0 0 15px;
+}
+
+.final-cta p {
+  color: #687a74;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* FOOTER */
+footer {
+  background: #12332e;
+  color: white;
+  text-align: center;
+  padding: 35px 20px;
+}
+
+footer p {
+  margin: 7px 0;
+}
+
+footer .small {
+  color: #b9cbc5;
+  font-size: 13px;
+}
+
+/* MOBILE */
+@media (max-width: 760px) {
+
+  .header-inner {
+    min-height: 62px;
   }
 
-  .navbtn{
-
-    font-size:13px;
-
-    padding:10px 13px;
-
+  .logo {
+    font-size: 17px;
   }
 
-}
+  .logo span {
+    font-size: 10px;
+  }
 
+  .header-inner .whatsapp-btn {
+    padding: 11px 15px;
+    font-size: 13px;
+  }
+
+  .hero {
+    padding: 38px 0 25px;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .hero h1 {
+    font-size: 38px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .primary-btn,
+  .secondary-btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  section {
+    padding: 45px 0;
+  }
+
+  .products,
+  .why {
+    grid-template-columns: 1fr;
+  }
+
+  .promo {
+    grid-template-columns: 1fr;
+    padding: 32px 25px;
+    text-align: center;
+  }
+
+  .promo h2 {
+    font-size: 27px;
+  }
+
+  .promo .whatsapp-btn {
+    justify-self: center;
+  }
+
+  .poster-section {
+    padding: 25px 0 40px;
+  }
+
+  .poster {
+    border-radius: 15px;
+  }
+
+  .section-title h2,
+  .final-cta h2 {
+    font-size: 29px;
+  }
+}
 </style>
-
 </head>
 
 <body>
 
 <header>
+  <div class="container header-inner">
+    <div class="logo">
+      COWAY BY NIEDA
+      <span>Nieda Pakar Coway</span>
+    </div>
 
-  <div class="container">
-
-    <nav>
-
-      <div class="logo">coway</div>
-
-      <a class="navbtn"
-
-         href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20tahu%20promosi%20Coway">
-
-         WhatsApp Nieda →
-
-      </a>
-
-    </nav>
-
+    <a class="whatsapp-btn"
+       href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20tahu%20promosi%20Coway">
+       💬 WhatsApp Nieda
+    </a>
   </div>
-
 </header>
 
+
+<main>
+
+<!-- HERO -->
 <section class="hero">
+  <div class="container hero-grid">
 
-  <div class="container">
+    <div>
+      <div class="badge">🌿 Pilihan Coway Untuk Rumah</div>
 
-    <h1>
+      <h1>
+        Tak pasti nak pilih Coway yang mana?
+      </h1>
 
-      Nak Coway,<br>
+      <p>
+        Ceritakan keperluan rumah dan bajet anda.
+        Nieda bantu cadangkan pilihan Coway yang sesuai —
+        mudah, jelas dan tanpa pening kepala.
+      </p>
 
-      tapi tak tahu nak pilih model mana?
+      <div class="hero-buttons">
 
-    </h1>
+        <a class="primary-btn"
+           href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20tahu%20promosi%20Coway">
+           💬 Tanya Nieda di WhatsApp
+        </a>
 
-    <p>
+        <a class="secondary-btn" href="#produk">
+           Lihat Pilihan Coway
+        </a>
 
-      Nieda bantu pilih produk Coway yang sesuai
+      </div>
+    </div>
 
-      berdasarkan keperluan rumah dan bajet bulanan anda.
-
-    </p>
-
-    <a class="whatsapp"
-
-       href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20tahu%20promosi%20Coway">
-
-       💬 Tanya Nieda Sekarang
-
-    </a>
-
-  </div>
-
-</section>
-
-<section class="sale">
-
-  <div class="container">
-
-    <h2>🔥 PROMOSI COWAY TERKINI</h2>
-
-    <p>
-
-      Semak promosi, rebate dan pilihan produk terkini.
-
-    </p>
-
-    <img
-
-      src="WhatsApp%20Image%202026-09-05%20at%2001.10.06.jpeg"
-
-      alt="Promosi Coway oleh Nieda">
+    <div>
+      <img
+        class="poster"
+        src="WhatsApp%20Image%202026-09-05%20at%2001.10.06.jpeg"
+        alt="Promosi Coway by Nieda">
+    </div>
 
   </div>
-
 </section>
 
-<section class="cta">
 
-  <h2>Tak pasti model mana sesuai?</h2>
+<!-- PRODUK -->
+<section id="produk">
+  <div class="container">
 
-  <p>
+    <div class="section-title">
+      <h2>Pilih Mengikut Keperluan Rumah</h2>
+      <p>
+        Setiap rumah berbeza. Nieda boleh bantu semak pilihan
+        berdasarkan keperluan dan bajet bulanan anda.
+      </p>
+    </div>
 
-    Beritahu Nieda keperluan rumah dan bajet anda.
+    <div class="products">
 
-    Nieda bantu cadangkan pilihan yang sesuai.
+      <div class="card">
+        <div class="card-icon">💧</div>
+        <h3>Penapis Air</h3>
+        <p>
+          Pilihan untuk keperluan air minuman di rumah.
+        </p>
+        <a href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20tahu%20penapis%20air%20Coway">
+          Tanya Penapis Air →
+        </a>
+      </div>
 
-  </p>
+      <div class="card">
+        <div class="card-icon">🌬️</div>
+        <h3>Penapis Udara</h3>
+        <p>
+          Sesuai untuk membantu menjaga kualiti udara
+          dalam ruang rumah.
+        </p>
+        <a href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20tahu%20penapis%20udara%20Coway">
+          Tanya Penapis Udara →
+        </a>
+      </div>
 
-  <a class="whatsapp"
+      <div class="card">
+        <div class="card-icon">❄️</div>
+        <h3>Aircond</h3>
+        <p>
+          Pilihan aircond untuk keselesaan rumah,
+          terutama ketika cuaca panas.
+        </p>
+        <a href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20tahu%20aircond%20Coway">
+          Tanya Aircond →
+        </a>
+      </div>
 
-     href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20minta%20cadangan%20Coway">
+      <div class="card">
+        <div class="card-icon">🛏️</div>
+        <h3>Tilam</h3>
+        <p>
+          Pilihan tilam Coway untuk keselesaan ketika tidur.
+        </p>
+        <a href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20tahu%20tilam%20Coway">
+          Tanya Tilam →
+        </a>
+      </div>
 
-     💚 WhatsApp Nieda Sekarang
+      <div class="card">
+        <div class="card-icon">🧺</div>
+        <h3>Washer & Dryer</h3>
+        <p>
+          Mudahkan urusan mencuci dan mengeringkan pakaian
+          di rumah.
+        </p>
+        <a href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20tahu%20washer%20dryer%20Coway">
+          Tanya Washer Dryer →
+        </a>
+      </div>
 
-  </a>
+      <div class="card">
+        <div class="card-icon">🛋️</div>
+        <h3>Produk Lain</h3>
+        <p>
+          Nak tahu produk Coway lain yang tersedia?
+          Tanya Nieda terus.
+        </p>
+        <a href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20tahu%20produk%20Coway">
+          Tanya Nieda →
+        </a>
+      </div>
 
+    </div>
+  </div>
 </section>
+
+
+<!-- PROMO -->
+<section>
+  <div class="container">
+
+    <div class="promo">
+
+      <div>
+        <h2>🎁 Ada Promosi Coway?</h2>
+
+        <p>
+          Promosi boleh berubah mengikut kempen semasa.
+          Contohnya, <strong>rebat RM20 sebulan untuk 5 bulan pertama</strong>
+          bagi kempen yang sedang diiklankan.
+          Tanya Nieda untuk semak kelayakan dan bayaran semasa.
+        </p>
+      </div>
+
+      <a class="whatsapp-btn"
+         href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20semak%20promosi%20Coway">
+         Semak Promosi
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- KENAPA NIEDA -->
+<section>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Kenapa Tanya Nieda?</h2>
+      <p>
+        Tak perlu terus tahu model mana yang nak.
+        Mulakan dengan apa yang rumah anda perlukan.
+      </p>
+    </div>
+
+    <div class="why">
+
+      <div class="why-item">
+        <div class="number">01</div>
+        <h3>Terangkan Keperluan</h3>
+        <p>
+          Beritahu Nieda apa yang anda cari.
+        </p>
+      </div>
+
+      <div class="why-item">
+        <div class="number">02</div>
+        <h3>Semak Pilihan</h3>
+        <p>
+          Nieda bantu bandingkan pilihan yang sesuai.
+        </p>
+      </div>
+
+      <div class="why-item">
+        <div class="number">03</div>
+        <h3>Buat Keputusan</h3>
+        <p>
+          Pilih berdasarkan keperluan dan bajet sendiri.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FAQ -->
+<section>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Soalan Lazim</h2>
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>Saya tak tahu nak pilih model mana.</summary>
+        <p>
+          Tak apa 😊 Beritahu Nieda keperluan rumah dan bajet
+          bulanan. Nieda bantu cadangkan pilihan yang sesuai.
+        </p>
+      </details>
+
+      <details>
+        <summary>Boleh tanya harga dahulu?</summary>
+        <p>
+          Boleh. WhatsApp Nieda dan Nieda boleh semak harga
+          serta promosi semasa.
+        </p>
+      </details>
+
+      <details>
+        <summary>Promosi RM20 masih ada?</summary>
+        <p>
+          Promosi bergantung kepada kempen semasa dan kelayakan.
+          WhatsApp Nieda untuk semakan terkini.
+        </p>
+      </details>
+
+      <details>
+        <summary>Boleh beli Coway untuk kawasan Sarawak?</summary>
+        <p>
+          WhatsApp Nieda untuk semak kawasan, produk dan
+          proses permohonan semasa.
+        </p>
+      </details>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section>
+  <div class="container">
+
+    <div class="final-cta">
+
+      <h2>Masih Tak Pasti?</h2>
+
+      <p>
+        Tak perlu fikir sorang-sorang.
+        <br>
+        Cerita saja apa yang rumah anda perlukan.
+        Nieda bantu dari situ. 💚
+      </p>
+
+      <a class="primary-btn"
+         href="https://wa.me/60194995016?text=Hi%20Nieda,%20saya%20nak%20minta%20cadangan%20Coway">
+         💬 WhatsApp Nieda Sekarang
+      </a>
+
+    </div>
+
+  </div>
+</section>
+
+</main>
+
 
 <footer>
-
-  <strong>NIEDA ANUAR</strong><br>
-
-  Nieda Pakar Coway<br>
-
-  📱 019-499 5016
-
+  <p><strong>NIEDA ANUAR</strong></p>
+  <p>Nieda Pakar Coway</p>
+  <p>📱 019-499 5016</p>
+  <p class="small">
+    © 2026 Coway by Nieda. All rights reserved.
+  </p>
 </footer>
 
 </body>
-
 </html>
